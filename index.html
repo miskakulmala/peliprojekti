@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF8" />
+        <meta name="author" content="Silvia Geier" />
+        <meta name="description" content="Hiili 2030 -kampanjasivut" />
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title>Hiili 2030</title>
+        <link rel ="shortcut icon"
+              href = "favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,600,900" rel="stylesheet">
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+            x.className = "topnav";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>HIILEN AIKA ON NYT</h1>
+        </header>
+            <nav>
+            <ul class="topnav" id="myTopnav">
+                    <li class="now"><a href="index.html">ETUSIVU</a></li>
+                    <li><a href="news.html">UUTISET</a></li>
+                    <li><a href="contact.html">YHTEYSTIEDOT</a></li>
+                    <li><a href="https://hiilitieto.fi/">INFO</a></li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                    </li>
+            </ul>
+        </nav>
+        <section>
+            <article id="first" class="blog-post">
+                <p>Hallitus suunnittelee kivihiilen käytön kieltämistä lailla vuoteen 2030 mennessä.<br /><br /><img class="resize" src="power_plant.png"><br /><br />Tätä perustellaan hallitusohjelmalla ja ympäristötavoitteilla, mutta kuitenkin hallitus suunnittelee korvaavansa kivihiiltä turpeella, joka on kivihiiltä saastuttavampi vaihtoehto.<br /><br /><img class="resize" src="suo.JPG"><br /><br />
+                Kivihiilen käyttö vähenee jatkuvasti, kun samaan aikaan uusiutuvat energiamuodot kehittyvät. On hyödyllisempää investoida uusiin innovaatioihin ja uusiutuvien energiamuotojen kehittämiseen, kuin vaihtaa edullinen ja vakaa kivihiili suot tuhoavaan turpeeseen.</p>
+                <img class="resize" src="s%C3%A4hk%C3%B6tolppa.jpg" alt="Could not load picture">
+                <p></p>
+            </article>
+            <article id="second" class="blog-post">
+                <video width="640" height="360" controls poster="poster.png">>
+	            <source src="KIVIHIILIvideo.mpg"  type="video/mpg" />
+	            <source src="KIVIHIILIvideo.ogv"  type="video/ogg" />
+                <source src="KIVIHIILIvideo.webm"  type="video/webm" />
+                </video>
+            </article>
+        </section>
+        <footer>
+            <p>Copyright 2017 by Silvia Geier<br />"HELEN" Oy<br />0445150910<br /><a href="https://www.helen.fi">HELEN</a><br /><br />HELEN Sosiaalisessa mediassa: </p>
+            <a href="https://www.instagram.com/energiahelen/">
+                <img src="insta.png" alt="Instagram">
+            </a>
+            <a href="https://fi-fi.facebook.com/energiahelen/">
+                <img src="face.png" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/energiahelen">
+                <img src=twitter.png alt="Twitter">
+            </a>
+        </footer>
+    </body>
+</html>

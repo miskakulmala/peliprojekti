@@ -1,0 +1,296 @@
+body {
+    background-color: #d0d6cd;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: url(Finnish_forest_Fotor.jpg) no-repeat center bottom fixed;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    margin: 0px;  
+}
+
+header h1{
+    font-size: 3.5em;
+    color: #fff;
+    text-shadow: 3px 3px 3px  #000;
+    z-index: 999;
+    padding: 50px;
+    margin: 0px;
+}
+
+
+
+.topnav {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 3px 0px 3px 0px;
+    border-color: #6f786a;
+}
+
+.topnav li {
+    display: inline-block;
+}
+
+.topnav li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #c7c7c7;
+    padding: 15px 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.topnav li.icon {
+    display: none;
+}
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 999;
+}
+
+nav li a:hover {
+    color: #000
+}
+
+.topnav li.now a {
+  color: #6f786a;  
+}
+
+
+
+.blog-post {
+    font-size: 1.2em;
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+.blog-post h2 {
+    font-size: 2em;
+}
+
+.blog-post h2:hover {
+    transition: 1s;
+    font-size: 3em;
+}
+
+.blog-post p{
+    font-weight:100;
+}
+
+.resize {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+}
+
+.resize:hover {
+    transition: 1s;
+    width:95%;
+    max-width: 450px;
+}
+
+
+
+.news {
+    text-align: center;
+    font-size: 1.2em;
+    width: 70%;
+    margin: 40px 0px 20px 40px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.news h1 {
+    text-align: left;
+    font-size: 1.5em;
+}
+
+#newsArticle {
+    background-image: no-repeat center bottom fixed;
+}
+
+#newsHeadline {
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 10px;
+}
+
+#newsDate {
+    padding: 10px;
+    font-weight: 600;
+}
+
+#newsContent {
+    padding: 0px 15px 0px 15px;
+}
+
+#controlPanel {
+    position: relative;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#controlPanel div {
+    display: inline-block;
+    padding: 10px;
+}
+
+#controlPanel div button {
+    border: none;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+#controlPanel div button:hover {
+    transition: 0.6s;
+    background-color: #6f786a;
+    color: #fff;
+}
+
+
+.game {
+    margin: 10px;
+    display: block;
+}
+
+.game button {
+    font-size: 1em;
+    padding: 10px;
+}
+
+
+
+.contact {
+    width: 100%;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 3px 0px 3px 0px;
+    border-color: #c7c7c7;;
+    margin: 20px 0px 20px 0px;
+}
+
+.contact p {
+    text-align: center;
+    padding: 15px;
+    color: #000;   
+}
+
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+footer {
+    width: 100%;
+    background-color: dimgray;
+    text-align: center;
+    margin: 0px;
+}
+
+footer p {
+    color: #000;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 15px; 
+    margin: 0px;
+}
+
+footer p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+footer a {
+    display: inline-block;
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 680px) {
+ul.topnav li:not(:first-child) {display: none;}
+ul.topnav li.icon {
+    float: right;
+    display: inline-block;}
+.now a {color: #6f786a;}    
+.blog-post {width: 90%;}
+.news {
+    margin: 10px 0px 10px 0px;
+    width:90%;}
+footer a {display: block;}
+footer img {padding: 5px;}
+ul.topnav.responsive {position: relative;}
+ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;}
+ul.topnav.responsive li {
+    float: none;
+    display: inline;}
+ul.topnav.responsive li a {
+    display: block;
+    text-align: left;}
+}
+
+
+
+@viewport {
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+
+
+
