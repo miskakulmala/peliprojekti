@@ -8,7 +8,7 @@ gameOver.prototype = {
         
   		//var gameOverTitle = this.game.add.sprite(160,160,"gameover");
 		//gameOverTitle.anchor.setTo(0.5,0.5);
-		var playButton = this.game.add.button(game.width/2,340,"play",this.playTheGame,this);
+		var playButton = this.game.add.button(game.width/2,340,"playButton",this.playTheGame,this);
 		playButton.anchor.setTo(0.5,0.5);
         
         playButton.onInputOver.add(over, this);
