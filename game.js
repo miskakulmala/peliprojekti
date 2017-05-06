@@ -119,6 +119,10 @@ function createBlobs(y) {
 
 update: function() {
 
+    blobs.forEach(function(item) {
+        item.body.velocity.x = 1.0002*item.body.velocity.x;
+        item.body.velocity.y = 1.0002*item.body.velocity.y;
+    });
 
 
     
