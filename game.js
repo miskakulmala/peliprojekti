@@ -144,7 +144,8 @@ function collisionHandler(player, alien) {
 function blobCollision(player, blob) {
     console.log("MOIII");
     loseSound.play();
-    //this.game.start("GameOver")
+    music.mute = false;
+    this.game.state.start("GameOver");
 }
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
     game.physics.arcade.overlap(player, blobs, blobCollision, null, this);
