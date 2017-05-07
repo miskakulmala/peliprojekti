@@ -1,10 +1,13 @@
-var gameOver = function(game){}
+var gameOver = function(game){
+    var endText;
+}
  
 gameOver.prototype = {
   	create: function(){
         var b = game.add.sprite(0, 0, 'forest');
         b.height=600;
         b.width=800;
+        endText = game.add.text(game.width/4, 160, "Game over. You scored: " + score, { fontSize: '32px', fill: '#000' });
         
   		//var gameOverTitle = this.game.add.sprite(160,160,"gameover");
 		//gameOverTitle.anchor.setTo(0.5,0.5);

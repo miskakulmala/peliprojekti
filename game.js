@@ -11,6 +11,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 var score = 0;
 var scoreText;
 var blobSpeed = -40;
+var soundToggle;
 
 var theGame = function() {
    
@@ -52,6 +53,20 @@ create: function() {
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
     
+    //this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'button', this.toggleSound, this);
+    this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'button', this.toggleSound, this);
+    this.soundToggle.frame = 1;
+    
+    function toggleSound() {		
+      if (this.game.sound.mute) {
+          this.game.sound.mute = false;
+          this.soundBtn.frame = unmute;
+      } else {
+          this.game.sound.mute = true;
+          this.soundBtn.frame = mute;
+      }
+    }
+    
     
     
 function createAliens(y) {
@@ -67,8 +82,8 @@ function createBlobs(y) {
     blob.width = 50;
     blob.height = 50;
     blob.checkWorldBounds = true;
-    blob.body.velocity.x = -100 + Math.random() * -200;
-    blob.body.velocity.y = Math.random() * -200;
+    blob.body.velocity.x = Math.random() * 100;
+    blob.body.velocity.y = Math.random() * 100;
     game.physics.enable(blob, Phaser.Physics.ARCADE);
     blob.body.collideWorldBounds = true;
     blob.body.bounce.setTo(1, 1);  
@@ -124,11 +139,23 @@ function createBlobs(y) {
 update: function() {
 
     blobs.forEach(function(item) {
-        item.body.velocity.x = 1.0002*item.body.velocity.x;
-        item.body.velocity.y = 1.0002*item.body.velocity.y;
+        item.body.velocity.x = 1.0001*item.body.velocity.x;
+        item.body.velocity.y = 1.0001*item.body.velocity.y;
     });
 
 
+    this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'muteButton', this.toggleSound, this);
+    this.soundToggle.frame = 1;
+    
+    function toggleSound() {		
+      if (this.game.sound.mute) {
+          this.game.sound.mute = false;
+          this.soundBtn.frame = unmute;
+      } else {
+          this.game.sound.mute = true;
+          this.soundBtn.frame = mute;
+      }
+    }
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * game.height, 'alien');
@@ -185,23 +212,4 @@ function blobCollision(player, blob) {
 
 
 };
-
-
-            
-
-
-
-//    game.state.add('game',theGame);
-  //  game.state.start('game');
-
-
-
-
-
-
-
-
-
-
-
 
