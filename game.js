@@ -54,20 +54,22 @@ create: function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     
     //this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'button', this.toggleSound, this);
-    this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'button', this.toggleSound, this);
-    this.soundToggle.frame = 1;
+
+    /*
     
     function toggleSound() {		
       if (this.game.sound.mute) {
           this.game.sound.mute = false;
-          this.soundBtn.frame = unmute;
+          this.soundToggle.frame = 1;
+          
       } else {
           this.game.sound.mute = true;
-          this.soundBtn.frame = mute;
+          this.soundToggle.frame = 1;
+          
       }
     }
     
-    
+    */
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random()+40, Math.random() * game.height, 'alien');
@@ -103,7 +105,7 @@ function createBlobs(y) {
     music.loopFull();
 
     //player = game.add.sprite(game.width/2, game.height/2, 'player');
-    player = game.add.sprite(game.width/2, game.height/2, 'playersprite')
+    player = game.add.sprite(game.width/2, game.height/2, 'playersprite');
     player.frame = 1;
     player.anchor.setTo(0.5, 0.5);
     player.width = 50;
@@ -121,6 +123,12 @@ function createBlobs(y) {
     blobs.enableBody = true;
     blobs.physicsBodyType = Phaser.Physics.ARCADE;
     
+    this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'soundsprite', this.toggleSound, this);
+    this.soundToggle.frame = 0;
+    //this.soundToggle.anchor.setTo(0.5, 0.5);
+    this.soundToggle.width = 50;
+    this.soundToggle.height = 50;
+    
     
     for (var y = 0; y < 4; y++)
     {
@@ -135,6 +143,16 @@ function createBlobs(y) {
   
 
 },
+toggleSound: function() {		
+      if (this.game.sound.mute) {
+          this.game.sound.mute = false;
+          this.soundToggle.frame = 0;
+      } else {
+          this.game.sound.mute = true;
+          this.soundToggle.frame = 1;
+      }
+    },
+        
 
 update: function() {
 
@@ -143,19 +161,6 @@ update: function() {
         item.body.velocity.y = 1.0001*item.body.velocity.y;
     });
 
-
-    this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'muteButton', this.toggleSound, this);
-    this.soundToggle.frame = 1;
-    
-    function toggleSound() {		
-      if (this.game.sound.mute) {
-          this.game.sound.mute = false;
-          this.soundBtn.frame = unmute;
-      } else {
-          this.game.sound.mute = true;
-          this.soundBtn.frame = mute;
-      }
-    }
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * game.height, 'alien');
