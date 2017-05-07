@@ -12,6 +12,8 @@ var score;
 var scoreText;
 //var blobSpeed = -40;
 var soundToggle;
+var timer;
+var diamonds;
 
 var theGame = function() {
    
@@ -54,23 +56,7 @@ create: function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     score = 0;
     
-    //this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'button', this.toggleSound, this);
-
-    /*
-    
-    function toggleSound() {		
-      if (this.game.sound.mute) {
-          this.game.sound.mute = false;
-          this.soundToggle.frame = 1;
-          
-      } else {
-          this.game.sound.mute = true;
-          this.soundToggle.frame = 1;
-          
-      }
-    }
-    
-    */
+    this.timer=this.game.time.events.loop(5000,this.createDiamond,this);
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
@@ -162,6 +148,12 @@ toggleSound: function() {
           this.soundToggle.frame = 1;
       }
     },
+createDiamond: function() {
+    var diamond = diamonds.create((game.width-40) * Math.random(), Math.random() * game.height, 'diamond');
+    diamond.width = 40;
+    diamond.height = 40;
+    diamond.checkWorldBounds = true;
+},
         
 
 update: function() {
@@ -179,16 +171,8 @@ function createAliens(y) {
     alien.checkWorldBounds = true;
 }
     
-function createDiamond() {
-    var diamond = diamonds.create((game.width-40) * Math.random(), Math.random() * game.height, 'diamond');
-    diamond.width = 40;
-    diamond.height = 40;
-    diamond.checkWorldBounds = true;
-}
-    
 
-    
-function diamondCollision() {
+function diamondCollision(player, diamond) {
     diamonds.remove(diamond); 
     coalSound.play();
     score += 3
