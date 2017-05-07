@@ -6,8 +6,9 @@ preload.prototype = {
 		this.game.load.image('alien', 'assets/smallcoal.gif');
         this.game.load.image('forest','assets/background.jpg');
         this.game.load.image('player', 'assets/obama-sprite.png');
-        this.game.load.image('peat','assets/turve.png');
-        this.game.load.image('playButton', 'assets/playmenu.png')
+        this.game.load.image('peat','assets/peat.png');
+        this.game.load.image('playButton', 'assets/playmenu.png');
+        this.game.load.image('coallogo','assets/coallogo.png');
         this.game.load.spritesheet('soundsprite','assets/soundpic.png',2000,2000)
         //   this.game.load.image('blob','assets/blob.gif');
         this.game.load.audio('backgroundmusic', ['assets/gamemusic.mp3', 'assets/gamemusic.ogg']);

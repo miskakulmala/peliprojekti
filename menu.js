@@ -9,6 +9,10 @@ gameTitle.prototype = {
         b.height=600;
         b.width=800;
         
+        var text = game.add.sprite(200,50,'coallogo');
+        text.width = 400;
+        text.height = 150;
+        
         rats = game.add.physicsGroup();
         
         var y = 80;
