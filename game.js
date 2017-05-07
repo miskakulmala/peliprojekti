@@ -18,6 +18,7 @@ var theGame = function() {
 var player;
 var aliens;
 var blobs;
+var mysprite;
 
 var music;
 
@@ -50,6 +51,7 @@ var music;
 create: function() {
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
+    
     
     
 function createAliens(y) {
@@ -85,7 +87,9 @@ function createBlobs(y) {
     loseSound = game.add.audio('sad');
     music.loopFull();
 
-    player = game.add.sprite(game.width/2, game.height/2, 'player');
+    //player = game.add.sprite(game.width/2, game.height/2, 'player');
+    player = game.add.sprite(game.width/2, game.height/2, 'playersprite')
+    player.frame = 1;
     player.anchor.setTo(0.5, 0.5);
     player.width = 50;
     player.height = 50;
@@ -148,7 +152,7 @@ function collisionHandler(player, alien) {
 function blobCollision(player, blob) {
     console.log("MOIII");
     loseSound.play();
-    music.mute = false;
+    music.mute = true;
     this.game.state.start("GameOver");
 }
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
@@ -156,20 +160,26 @@ function blobCollision(player, blob) {
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
     {
         player.x -= 4;
+        player.frame = 9;
     }
     else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
     {
         player.x += 4;
+        player.frame = 4;
     }
+    
 
     if (game.input.keyboard.isDown(Phaser.Keyboard.UP))
     {
         player.y -= 4;
+        player.frame = 12;
     }
     else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
     {
         player.y += 4;
+        player.frame = 2;
     }
+    
 
 },
 
