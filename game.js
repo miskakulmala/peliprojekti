@@ -73,7 +73,7 @@ create: function() {
     */
     
 function createAliens(y) {
-    var alien = aliens.create((game.width-40)*Math.random()+40, Math.random() * game.height, 'alien');
+    var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
     alien.width = 40;
     alien.height = 40;
     alien.checkWorldBounds = true;
@@ -85,8 +85,8 @@ function createBlobs(y) {
     blob.width = 50;
     blob.height = 50;
     blob.checkWorldBounds = true;
-    blob.body.velocity.x = Math.random() * 100;
-    blob.body.velocity.y = Math.random() * 100;
+    blob.body.velocity.x = Math.random() * 150;
+    blob.body.velocity.y = Math.random() * 150;
     game.physics.enable(blob, Phaser.Physics.ARCADE);
     blob.body.collideWorldBounds = true;
     blob.body.bounce.setTo(1, 1);  
@@ -173,7 +173,7 @@ update: function() {
     
     
 function createAliens(y) {
-    var alien = aliens.create((game.width-40)*Math.random(), Math.random() * game.height, 'alien');
+    var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
     alien.width = 40;
     alien.height = 40;
     alien.checkWorldBounds = true;
