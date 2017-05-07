@@ -15,7 +15,7 @@ gameTitle.prototype = {
         
         rats = game.add.physicsGroup();
         
-        var y = 80;
+        var y = 200;
         
         for (var i = 0; i < 9; i++)
         {
@@ -23,7 +23,7 @@ gameTitle.prototype = {
         rat.width = 40;
         rat.height = 40;
         rat.body.velocity.x = game.rnd.between(100, 300);
-        y += 48;
+        y += 40;
         }
         
 
@@ -33,7 +33,7 @@ gameTitle.prototype = {
         
 		//var gameTitle = this.game.add.sprite(game.width/2,160,"peat");
 		//gameTitle.anchor.setTo(0.5,0.5);
-		var playButton = this.game.add.button(game.width/2,320,"playButton",this.playTheGame,this);
+		var playButton = this.game.add.button(game.width/2,360,"playButton",this.playTheGame,this);
 		playButton.anchor.setTo(0.5,0.5);
         
         playButton.onInputOver.add(over, this);
@@ -44,7 +44,7 @@ gameTitle.prototype = {
         }
         
         function out() {
-            playButton.y = 320;
+            playButton.y = 360;
         }
 	},
     update: function() {
