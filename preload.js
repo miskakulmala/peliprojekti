@@ -12,10 +12,11 @@ preload.prototype = {
         this.game.load.image('gameover','assets/gameover.png');
         this.game.load.spritesheet('soundsprite','assets/soundpic.png',2000,2000)
         //   this.game.load.image('blob','assets/blob.gif');
-        this.game.load.audio('backgroundmusic', ['assets/gamemusic.mp3', 'assets/gamemusic.ogg']);
-        this.game.load.audio('coal','assets/nakkimukisound.mp3');
+        this.game.load.audio('backgroundmusic', 'assets/pelimusa.mp3');
+        this.game.load.audio('coal','assets/voittosound.mp3');
         this.game.load.audio('sad', 'assets/sadmusic.mp3');
-        this.game.load.spritesheet('playersprite','SpriteSheet.png',46,60);
+        this.game.load.spritesheet('playersprite','assets/SpriteSheet.png',46,60);
+        this.game.load.image('diamond', 'assets/diamond.png');
 	},
   	create: function(){
 		this.game.state.start("GameTitle");

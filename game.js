@@ -124,6 +124,10 @@ function createBlobs(y) {
     blobs.enableBody = true;
     blobs.physicsBodyType = Phaser.Physics.ARCADE;
     
+    diamonds = game.add.group();
+    diamonds.enableBody = true;
+    diamonds.physicsBodyType = Phaser.Physics.ARCADE;
+    
     this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'soundsprite', this.toggleSound, this);
     if (this.game.sound.mute) {
        this.soundToggle.frame = 1;
@@ -166,7 +170,7 @@ update: function() {
         item.body.velocity.x = 1.0001*item.body.velocity.x;
         item.body.velocity.y = 1.0001*item.body.velocity.y;
     });
-
+    
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * game.height, 'alien');
@@ -175,7 +179,21 @@ function createAliens(y) {
     alien.checkWorldBounds = true;
 }
     
+function createDiamond() {
+    var diamond = diamonds.create((game.width-40) * Math.random(), Math.random() * game.height, 'diamond');
+    diamond.width = 40;
+    diamond.height = 40;
+    diamond.checkWorldBounds = true;
+}
+    
 
+    
+function diamondCollision() {
+    diamonds.remove(diamond); 
+    coalSound.play();
+    score += 3
+    scoreText.text = 'Score: ' + score;
+}
     
 function collisionHandler(player, alien) {
     aliens.remove(alien);
@@ -195,6 +213,8 @@ function blobCollision(player, blob) {
 }
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
     game.physics.arcade.overlap(player, blobs, blobCollision, null, this);
+    game.physics.arcade.overlap(player, diamonds, diamondCollision, null, this);
+    
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
     {
         player.x -= 4;
