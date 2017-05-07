@@ -8,9 +8,9 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 //var game = new Phaser.Game(800, 600, Phaser.CANVAS, "game");
         //        var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
 
-var score = 0;
+var score;
 var scoreText;
-var blobSpeed = -40;
+//var blobSpeed = -40;
 var soundToggle;
 
 var theGame = function() {
@@ -19,7 +19,7 @@ var theGame = function() {
 var player;
 var aliens;
 var blobs;
-var mysprite;
+//var mysprite;
 
 var music;
 
@@ -52,6 +52,7 @@ var music;
 create: function() {
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
+    score = 0;
     
     //this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'button', this.toggleSound, this);
 
@@ -124,7 +125,12 @@ function createBlobs(y) {
     blobs.physicsBodyType = Phaser.Physics.ARCADE;
     
     this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'soundsprite', this.toggleSound, this);
-    this.soundToggle.frame = 0;
+    if (this.game.sound.mute) {
+       this.soundToggle.frame = 1;
+    } else {
+        this.soundToggle.frame = 0;
+    }
+    
     //this.soundToggle.anchor.setTo(0.5, 0.5);
     this.soundToggle.width = 50;
     this.soundToggle.height = 50;
