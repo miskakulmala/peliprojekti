@@ -5,6 +5,11 @@ var gameTitle = function(game){
 gameTitle.prototype = {
     
   	create: function(){
+        
+        
+        
+        
+        
         var b = game.add.sprite(0, 0, 'forest');
         b.height=600;
         b.width=800;

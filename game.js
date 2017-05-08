@@ -39,6 +39,12 @@ create: function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     score = 0;
     
+    this.input.keyboard.addKeyCapture([Phaser.Keyboard.UP,
+                                   Phaser.Keyboard.DOWN,
+				   Phaser.Keyboard.LEFT,
+                                   Phaser.Keyboard.RIGHT,
+				   Phaser.Keyboard.SPACEBAR]);
+    
     //window.addEventListener(game.input.keyboard.isDown(Phaser.Keyboard.DOWN),event.preventDefault())
     
     this.timer=this.game.time.events.loop(5000,this.moveDiamond,this);
@@ -56,8 +62,8 @@ function createBlobs(y) {
     blob.width = 50;
     blob.height = 50;
     blob.checkWorldBounds = true;
-    blob.body.velocity.x = Math.random() * 150;
-    blob.body.velocity.y = Math.random() * 150;
+    blob.body.velocity.x = 50 + Math.random() * 50;
+    blob.body.velocity.y = 50 + Math.random() * 50;
     game.physics.enable(blob, Phaser.Physics.ARCADE);
     blob.body.collideWorldBounds = true;
     blob.body.bounce.setTo(1, 1);  
@@ -88,8 +94,8 @@ function createBlobs(y) {
     player = game.add.sprite(game.width/2, game.height/2, 'playersprite');
     player.frame = 1;
     player.anchor.setTo(0.5, 0.5);
-    player.width = 50;
-    player.height = 50;
+    player.width = 45;
+    player.height = 60;
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
     
@@ -168,7 +174,12 @@ moveDiamond: function() {
     
     
 update: function() {
-
+    /*
+    this.game.addEventListener('keydown', function(e) {
+        keysDown[e.keyCode] = true;
+        event.preventDefault();
+    });
+*/
     blobs.forEach(function(item) {
         item.body.velocity.x = 1.0004*item.body.velocity.x;
         item.body.velocity.y = 1.0004*item.body.velocity.y;
