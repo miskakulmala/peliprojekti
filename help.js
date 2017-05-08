@@ -1,5 +1,3 @@
-
-
 var help = function(game){}
  
 help.prototype = {
@@ -21,9 +19,11 @@ help.prototype = {
         logo.width = 300;
         logo.height = 120;
         
-        var theText = 'Try to collect 50 points by collecting coal and diamonds.\nDiamonds are harder to catch,\n but will give you more points.\n\nBeware of the peat, they will reduce your energy.\nBe quick, the peat becomes faster and faster!';
+        var text = 'Try to collect 50 points by collecting coal and diamonds.\nDiamonds are harder to catch,\n but will give you more points.\n\nBeware of the peat, they will reduce your energy.\nBe quick, the peat becomes faster and faster!';
         
-        helpText = game.add.text(120,220,theText,style);
+        helpText = game.add.text(120,220,text,style);
+        
+        
         
         var pic1 = game.add.sprite(600,250, 'alien');
             pic1.width = 80;

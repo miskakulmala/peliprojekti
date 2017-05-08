@@ -1,10 +1,16 @@
-var gameTitle = function(game){
+var menu = function(game){
     var coals;
+    var music;
+    var soundToggle;
 }
  
-gameTitle.prototype = {
+menu.prototype = {
     
   	create: function(){
+        
+        music = game.add.audio('menumusic');
+        music.loopFull();
+        
         
         var background = game.add.sprite(0, 0, 'forest');
         background.height=game.height;
@@ -13,6 +19,21 @@ gameTitle.prototype = {
         var logo = game.add.sprite(200,50,'coallogo');
         logo.width = 400;
         logo.height = 150;
+        
+        
+            
+        //Adding the mute-button
+        this.soundToggle = this.game.add.button(this.game.world.width - 70, 15, 'soundsprite', this.toggleSound, this);
+        this.soundToggle.width = 50;
+        this.soundToggle.height = 50;
+    
+        //Changing the correct frame of the mute-buttons spritesheet.
+        if (this.game.sound.mute) {
+            this.soundToggle.frame = 1;
+        } else {
+            this.soundToggle.frame = 0;
+        }
+        
         
         coals = game.add.physicsGroup();
 
@@ -28,6 +49,7 @@ gameTitle.prototype = {
         y += 40;
         }
         
+        
         //Creating the "play" and "help" -buttons and their features.
 		var playButton = this.game.add.button(game.width/2,360,"playButton",this.playTheGame,this);
         playButton.width = 180;
@@ -40,7 +62,6 @@ gameTitle.prototype = {
         function over() {
             playButton.y = playButton.y - 20;
         }
-        
         function out() {
             playButton.y = 360;
         }
@@ -49,6 +70,19 @@ gameTitle.prototype = {
         helpButton.width = 170;
         helpButton.height = 70;
 	},
+    
+    
+    
+    toggleSound: function() {		
+      if (this.game.sound.mute) {
+          this.game.sound.mute = false;
+          this.soundToggle.frame = 0;
+      } else {
+          this.game.sound.mute = true;
+          this.soundToggle.frame = 1;
+      }
+    },
+    
     update: function() {
         
         //Makes the randomly floating coals go through the screen again.
@@ -60,10 +94,14 @@ gameTitle.prototype = {
         }
         coals.forEach(checkPos,this);
     },
+    
 	playTheGame: function(){
+        music.mute = true;
 		this.game.state.start("TheGame");
 	},
+    
     goToHelp: function() {
+        music.mute = true;
         this.game.state.start("Help");
     }
     

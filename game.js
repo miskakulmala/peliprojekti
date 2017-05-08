@@ -40,7 +40,9 @@ create: function() {
     
     //Prevent scrolling while playing
     this.input.keyboard.addKeyCapture([Phaser.Keyboard.UP,
-                                       Phaser.Keyboard.DOWN
+                                       Phaser.Keyboard.DOWN,
+                                       Phaser.Keyboard.LEFT,
+                                       Phaser.Keyboard.RIGHT
                                       ]);
     
     
