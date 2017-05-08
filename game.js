@@ -26,29 +26,8 @@ var blobs;
 var music;
 
 };
-//theGame.Play = {};
 
 theGame.prototype = {
-/*preload: function() {
-
-    game.load.image('alien', 'assets/smallcoal.gif');
-    game.load.image('forest','assets/background.jpg');
-    game.load.image('player', 'assets/obama-sprite.png');
-    game.load.image('peat','assets/turve.png');
- //   game.load.image('blob','assets/blob.gif');
-    game.load.audio('backgroundmusic', ['assets/gamemusic.mp3', 'assets/gamemusic.ogg']);
-
-},
-*/
-/*
-
-
-var player;
-var aliens;
-var blobs;
-var counter = 0;
-var music;
-*/
 
 
 create: function() {
@@ -56,7 +35,9 @@ create: function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     score = 0;
     
-    this.timer=this.game.time.events.loop(5000,this.createDiamond,this);
+    //window.addEventListener(game.input.keyboard.isDown(Phaser.Keyboard.DOWN),event.preventDefault())
+    
+    this.timer=this.game.time.events.loop(5000,this.moveDiamond,this);
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
@@ -77,6 +58,9 @@ function createBlobs(y) {
     blob.body.collideWorldBounds = true;
     blob.body.bounce.setTo(1, 1);  
 }
+    
+   
+    
         
     var b = game.add.sprite(0, 0, 'forest');
     b.height=600;
@@ -89,6 +73,7 @@ function createBlobs(y) {
     music = game.add.audio('backgroundmusic');
     coalSound = game.add.audio('coal');
     loseSound = game.add.audio('sad');
+    diamondSound = game.add.audio('diamondSound');
     music.loopFull();
 
     //player = game.add.sprite(game.width/2, game.height/2, 'player');
@@ -113,6 +98,10 @@ function createBlobs(y) {
     diamonds = game.add.group();
     diamonds.enableBody = true;
     diamonds.physicsBodyType = Phaser.Physics.ARCADE;
+    //diamond = game.add.sprite(Math.random() * (game.width - 40) , Math.random() * (game.heigth - 40), 'diamond');
+    //diamond.height = 40; 
+    //diamond.width = 40;
+    //game.physics.arcade.enable(diamond);
     
     this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'soundsprite', this.toggleSound, this);
     if (this.game.sound.mute) {
@@ -135,6 +124,7 @@ function createBlobs(y) {
     {
         createBlobs(y);
     }
+    
 
   
 
@@ -148,11 +138,12 @@ toggleSound: function() {
           this.soundToggle.frame = 1;
       }
     },
-createDiamond: function() {
-    var diamond = diamonds.create((game.width-40) * Math.random(), Math.random() * game.height, 'diamond');
-    diamond.width = 40;
-    diamond.height = 40;
-    diamond.checkWorldBounds = true;
+moveDiamond: function() {
+    diamonds.removeAll();
+    var diamond = diamonds.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'diamond');
+        diamond.width = 40;
+        diamond.height = 40;
+        diamond.checkWorldBounds = true;
 },
         
 
@@ -173,8 +164,10 @@ function createAliens(y) {
     
 
 function diamondCollision(player, diamond) {
-    diamonds.remove(diamond); 
-    coalSound.play();
+    //diamond.body.x = Math.random() * (game.width - 40);
+    //diamond.body.y = Math.random() * (game.height - 40);
+    diamonds.remove(diamond);
+    diamondSound.play();
     score += 3
     scoreText.text = 'Score: ' + score;
 }

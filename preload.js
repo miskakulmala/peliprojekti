@@ -17,6 +17,7 @@ preload.prototype = {
         this.game.load.audio('sad', 'assets/sadmusic.mp3');
         this.game.load.spritesheet('playersprite','assets/SpriteSheet.png',46,60);
         this.game.load.image('diamond', 'assets/diamond.png');
+        this.game.load.audio('diamondSound', 'assets/diamond.mp3');
 	},
   	create: function(){
 		this.game.state.start("GameTitle");
