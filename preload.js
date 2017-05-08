@@ -30,7 +30,7 @@ preload.prototype = {
         this.game.load.audio('backgroundmusic', 'assets/pelimusa.mp3');
         this.game.load.audio('coal','assets/voittosound.mp3');
         this.game.load.audio('sad', 'assets/sadmusic.mp3');
-        this.game.load.audio('slap', 'assets/slap.mp3');
+        this.game.load.audio('slap', 'assets/slap_cutted.mp3');
         this.game.load.audio('diamondSound', 'assets/diamond.mp3');
         this.game.load.audio('menumusic','assets/valikkomusa.ogg');
         
