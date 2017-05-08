@@ -19,7 +19,7 @@ help.prototype = {
         logo.width = 300;
         logo.height = 120;
         
-        var text = 'Try to collect 50 points by collecting coal and diamonds.\nDiamonds are harder to catch,\n but will give you more points.\n\nBeware of the peat, they will reduce your energy.\nBe quick, the peat becomes faster and faster!';
+        var text = 'Save Finland from cold winter and climate change!\n\nTry to collect 50 points by collecting coal and diamonds.\nDiamonds are harder to catch,\n but will give you more points.\n\nBeware of the peat, they will reduce your energy.\nBe quick, the peat becomes faster and faster!';
         
         helpText = game.add.text(120,220,text,style);
         
