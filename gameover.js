@@ -1,4 +1,6 @@
-var gameOver = function(game){}
+var gameOver = function(game){
+        var soundToggle;
+}
  
 gameOver.prototype = {
     create: function(){
@@ -6,6 +8,21 @@ gameOver.prototype = {
         var background = game.add.sprite(0, 0, 'forest');
         background.height=game.height;
         background.width=game.width;
+        
+        menuMusic.mute = false;
+        
+                    
+        //Adding the mute-button
+        this.soundToggle = this.game.add.button(this.game.world.width - 70, 15, 'soundsprite', this.toggleSound, this);
+        this.soundToggle.width = 50;
+        this.soundToggle.height = 50;
+    
+        //Changing the correct frame of the mute-buttons spritesheet.
+        if (this.game.sound.mute) {
+            this.soundToggle.frame = 1;
+        } else {
+            this.soundToggle.frame = 0;
+        }
         
         var style = {
             font: '34px Rajdhani',
@@ -42,6 +59,16 @@ gameOver.prototype = {
         helpButton.width = 170;
         helpButton.height = 70;
 	},
+    
+    toggleSound: function() {		
+      if (this.game.sound.mute) {
+          this.game.sound.mute = false;
+          this.soundToggle.frame = 0;
+      } else {
+          this.game.sound.mute = true;
+          this.soundToggle.frame = 1;
+      }
+    },
     
 	playTheGame: function(){
 		this.game.state.start("TheGame");
