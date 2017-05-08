@@ -28,6 +28,10 @@ var blobs;
 //var mysprite;
 
 var music;
+var coalSound;
+var loseSound;
+var diamondSound;
+var slap;
 
 };
 
