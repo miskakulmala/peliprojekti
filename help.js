@@ -13,17 +13,15 @@ help.prototype = {
             align: 'left'
         };
         
-        
-        
-        var b = game.add.sprite(0, 0, 'forest');
-        b.height=600;
-        b.width=800;
+        var background = game.add.sprite(0, 0, 'forest');
+        background.height=game.height;
+        background.width=game.width;
         
         var logo = game.add.sprite(250,50,'coallogo');
         logo.width = 300;
         logo.height = 120;
         
-        var theText = 'Try to collect 50 points by collecting coal and diamonds.\nDiamonds are harder to catch,\n but will give you more points.\n\nBeware of the peats, they will reduce your energy.\nBe quick, the peats get faster and faster!';
+        var theText = 'Try to collect 50 points by collecting coal and diamonds.\nDiamonds are harder to catch,\n but will give you more points.\n\nBeware of the peat, they will reduce your energy.\nBe quick, the peat becomes faster and faster!';
         
         helpText = game.add.text(120,220,theText,style);
         

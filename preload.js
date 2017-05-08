@@ -2,11 +2,10 @@ var preload = function(game){}
  
 preload.prototype = {
 	preload: function(){ 
-        console.log("moi")
 		this.game.load.image('alien', 'assets/smallcoal.gif');
         //this.game.load.image('alien','assets/smilingcoal.gif')
         this.game.load.image('forest','assets/background.jpg');
-        this.game.load.image('player', 'assets/obama-sprite.png');
+        //this.game.load.image('player', 'assets/obama-sprite.png');
         this.game.load.image('peat','assets/peat.png');
         //this.game.load.image('playButton', 'assets/playmenu.png');
         this.game.load.image('playButton','assets/playbutton.png')
