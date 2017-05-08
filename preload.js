@@ -1,4 +1,6 @@
-var preload = function(game){}
+var preload = function(game){
+    var menuMusic;
+}
  
 preload.prototype = {
 	preload: function(){
@@ -38,5 +40,8 @@ preload.prototype = {
 	},
   	create: function(){
 		this.game.state.start("GameTitle");
+
+        menuMusic = game.add.audio('menumusic');
+        menuMusic.loopFull();
 	}
 }

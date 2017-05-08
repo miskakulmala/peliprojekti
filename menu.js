@@ -1,16 +1,15 @@
 var menu = function(game){
     var coals;
-    var music;
     var soundToggle;
 }
  
 menu.prototype = {
     
   	create: function(){
-        
+       /* 
         music = game.add.audio('menumusic');
         music.loopFull();
-        
+       */ 
         
         var background = game.add.sprite(0, 0, 'forest');
         background.height=game.height;
@@ -96,12 +95,12 @@ menu.prototype = {
     },
     
 	playTheGame: function(){
-        music.mute = true;
+        menuMusic.mute = true;
 		this.game.state.start("TheGame");
 	},
     
     goToHelp: function() {
-        music.mute = true;
+        //music.mute = true;
         this.game.state.start("Help");
     }
     
