@@ -18,6 +18,7 @@ var timer;
 var diamonds;
 var health;
 var hlth;
+var win;
 
 var theGame = function() {
    
@@ -39,9 +40,17 @@ theGame.prototype = {
 
 
 create: function() {
+    var style = {
+  font: '34px Rajdhani',
+  fill: '#000',
+  align: 'center'
+};
+
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
     score = 0;
+    
+
     
     this.input.keyboard.addKeyCapture([Phaser.Keyboard.UP,
                                    Phaser.Keyboard.DOWN,
@@ -53,11 +62,10 @@ create: function() {
     
     this.timer=this.game.time.events.loop(5000,this.moveDiamond,this);
     
-function createAliens(y) {
-    var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
+function createAliens() {
+    var alien = aliens.create(20+(game.width-40)*Math.random(),((game.height-110)*Math.random())+60, 'alien');
     alien.width = 40;
     alien.height = 40;
-    alien.checkWorldBounds = true;
 }
     
 
@@ -79,7 +87,7 @@ function createBlobs(y) {
     var b = game.add.sprite(0, 0, 'forest');
     b.height=600;
     b.width=800;
-    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = game.add.text(350, 16, 'SCORE: 0', style);
     
     //  We only want world bounds on the left and right
     game.physics.setBoundsToWorld();
@@ -91,7 +99,7 @@ function createBlobs(y) {
     slap = game.add.audio('slap');
     music.loopFull();
     
-    hlth = game.add.sprite(200, 15, 'healthbar');
+    hlth = game.add.sprite(20, 20, 'healthbar');
     hlth.frame = 0;
 
     //player = game.add.sprite(game.width/2, game.height/2, 'player');
@@ -121,7 +129,7 @@ function createBlobs(y) {
     //diamond.width = 40;
     //game.physics.arcade.enable(diamond);
     
-    this.soundToggle = this.game.add.button(this.game.world.width - 150, 15, 'soundsprite', this.toggleSound, this);
+    this.soundToggle = this.game.add.button(this.game.world.width - 70, 15, 'soundsprite', this.toggleSound, this);
     if (this.game.sound.mute) {
        this.soundToggle.frame = 1;
     } else {
@@ -135,7 +143,7 @@ function createBlobs(y) {
     
     for (var y = 0; y < 4; y++)
     {
-        createAliens(y);
+        createAliens();
     }
     
     for (var y = 0; y < 4; y++)
@@ -167,7 +175,8 @@ moveDiamond: function() {
 */
     
 moveDiamond: function() {
-    var diamond = diamonds.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'diamond');
+    var diamond = diamonds.create(20+(game.width-40)*Math.random(),((game.height-110)*Math.random())+60, 'diamond');
+    
         diamond.width = 40;
         diamond.height = 40;
         diamond.checkWorldBounds = true
@@ -190,7 +199,7 @@ update: function() {
     });
     
     
-function createAliens(y) {
+function createAliens() {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
     alien.width = 40;
     alien.height = 40;
@@ -204,17 +213,26 @@ function diamondCollision(player, diamond) {
     diamonds.remove(diamond);
     diamondSound.play();
     score += 5;
-    scoreText.text = 'Score: ' + score;
+    scoreText.text = 'SCORE: ' + score;
+    if (score >= 50) {
+        music.mute = true;
+        win = true;
+        this.game.state.start("GameOver");
+    }
 }
     
 function collisionHandler(player, alien) {
     aliens.remove(alien);
-    var newY = Math.random() * 3;
-    createAliens(newY);  
+    createAliens();  
     console.log(score);
     coalSound.play();
     score += 1;
-    scoreText.text = 'Score: ' + score;
+    scoreText.text = 'SCORE: ' + score;
+    if (score >= 50) {
+        music.mute = true;
+        win = true;
+        this.game.state.start("GameOver");
+    }
 }
 
 function blobCollision(player, blob) {
@@ -225,6 +243,7 @@ function blobCollision(player, blob) {
     
     
     if (health == 0) {
+        win = false;
         this.game.state.start("GameOver");
         loseSound.play();
         music.mute = true;

@@ -43,6 +43,10 @@ gameTitle.prototype = {
         playButton.height = 260;
 		playButton.anchor.setTo(0.5,0.5);
         
+        var helpButton = this.game.add.button(320,520,"helpbutton",this.goToHelp,this);
+        helpButton.width = 170;
+        helpButton.height = 70;
+        
         playButton.onInputOver.add(over, this);
         playButton.onInputOut.add(out, this);
         
@@ -67,5 +71,8 @@ gameTitle.prototype = {
 	playTheGame: function(){
 		this.game.state.start("TheGame");
 	},
+    goToHelp: function() {
+        this.game.state.start("Help");
+    }
     
 }

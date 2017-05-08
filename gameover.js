@@ -7,11 +7,24 @@ gameOver.prototype = {
         var b = game.add.sprite(0, 0, 'forest');
         b.height=600;
         b.width=800;
-        endText = game.add.text(100, 200, "You scored: " + score, { fontSize: '32px', fill: '#000' });
+        
+            var style = {
+                font: '34px Rajdhani',
+                fill: '#000',
+                align: 'center'
+            };
+        if (win) {
+            endText = game.add.text(120, 220, "You won the game!", style);
+        }
+        else {
+            endText = game.add.text(120, 220, "You scored: " + score, style);
+        }
         
   		//var gameOverTitle = this.game.add.sprite(160,160,"gameover");
 		//gameOverTitle.anchor.setTo(0.5,0.5);
-        var endText = this.game.add.sprite(100,80,'gameover');
+        if (!win) {
+            var endTextPic = this.game.add.sprite(100,80,'gameover');
+        }
 		var playButton = this.game.add.button(game.width/2 + 200,320,"playAgainButton",this.playTheGame,this);
         playButton.width = 180;
         playButton.height = 300;
@@ -27,8 +40,14 @@ gameOver.prototype = {
         function out() {
             playButton.y = 320;
         }
+        var helpButton = this.game.add.button(320,520,"helpbutton",this.goToHelp,this);
+        helpButton.width = 170;
+        helpButton.height = 70;
 	},
 	playTheGame: function(){
 		this.game.state.start("TheGame");
-	}
+	},
+    goToHelp: function() {
+        this.game.state.start("Help");
+    }
 }
