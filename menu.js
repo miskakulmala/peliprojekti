@@ -34,6 +34,8 @@ gameTitle.prototype = {
 		//var gameTitle = this.game.add.sprite(game.width/2,160,"peat");
 		//gameTitle.anchor.setTo(0.5,0.5);
 		var playButton = this.game.add.button(game.width/2,360,"playButton",this.playTheGame,this);
+        playButton.width = 180;
+        playButton.height = 260;
 		playButton.anchor.setTo(0.5,0.5);
         
         playButton.onInputOver.add(over, this);

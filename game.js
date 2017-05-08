@@ -145,7 +145,7 @@ toggleSound: function() {
           this.game.sound.mute = true;
           this.soundToggle.frame = 1;
       }
-    },
+    },/*
 moveDiamond: function() {
     diamonds.removeAll();
     var diamond = diamonds.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'diamond');
@@ -154,12 +154,24 @@ moveDiamond: function() {
         diamond.checkWorldBounds = true;
 },
         
-
+*/
+    
+moveDiamond: function() {
+    var diamond = diamonds.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'diamond');
+        diamond.width = 40;
+        diamond.height = 40;
+        diamond.checkWorldBounds = true
+        setTimeout(function(){ 
+            diamonds.removeAll(); 
+        }, 2000)
+},
+    
+    
 update: function() {
 
     blobs.forEach(function(item) {
-        item.body.velocity.x = 1.0001*item.body.velocity.x;
-        item.body.velocity.y = 1.0001*item.body.velocity.y;
+        item.body.velocity.x = 1.0004*item.body.velocity.x;
+        item.body.velocity.y = 1.0004*item.body.velocity.y;
     });
     
     
@@ -176,7 +188,7 @@ function diamondCollision(player, diamond) {
     //diamond.body.y = Math.random() * (game.height - 40);
     diamonds.remove(diamond);
     diamondSound.play();
-    score += 3
+    score += 5;
     scoreText.text = 'Score: ' + score;
 }
     
