@@ -8,12 +8,16 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 //var game = new Phaser.Game(800, 600, Phaser.CANVAS, "game");
         //        var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
 
+
+
 var score;
 var scoreText;
 //var blobSpeed = -40;
 var soundToggle;
 var timer;
 var diamonds;
+var health;
+var hlth;
 
 var theGame = function() {
    
@@ -60,7 +64,7 @@ function createBlobs(y) {
 }
     
    
-    
+    health = 200;
         
     var b = game.add.sprite(0, 0, 'forest');
     b.height=600;
@@ -74,7 +78,11 @@ function createBlobs(y) {
     coalSound = game.add.audio('coal');
     loseSound = game.add.audio('sad');
     diamondSound = game.add.audio('diamondSound');
+    slap = game.add.audio('slap');
     music.loopFull();
+    
+    hlth = game.add.sprite(200, 15, 'healthbar');
+    hlth.frame = 0;
 
     //player = game.add.sprite(game.width/2, game.height/2, 'player');
     player = game.add.sprite(game.width/2, game.height/2, 'playersprite');
@@ -183,14 +191,32 @@ function collisionHandler(player, alien) {
 }
 
 function blobCollision(player, blob) {
-    console.log("MOIII");
-    loseSound.play();
-    music.mute = true;
-    this.game.state.start("GameOver");
+    health -= 2;
+    if (health != 0) {
+        slap.play();
+    }
+    
+    
+    if (health == 0) {
+        this.game.state.start("GameOver");
+        loseSound.play();
+        music.mute = true;
+    } else if (health == 160) {
+        hlth.frame = 1;
+    } else if (health == 120) {
+        hlth.frame = 2; 
+    } else if (health == 80) {
+        hlth.frame = 3; 
+    } else if (health == 40) {
+        hlth.frame = 4; 
+    }    
+    
 }
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
     game.physics.arcade.overlap(player, blobs, blobCollision, null, this);
     game.physics.arcade.overlap(player, diamonds, diamondCollision, null, this);
+    
+    
     
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
     {
