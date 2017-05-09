@@ -71,6 +71,7 @@ gameOver.prototype = {
     },
     
 	playTheGame: function(){
+        menuMusic.mute = true;
 		this.game.state.start("TheGame");
 	},
     
