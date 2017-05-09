@@ -6,10 +6,6 @@ var menu = function(game){
 menu.prototype = {
     
   	create: function(){
-       /* 
-        music = game.add.audio('menumusic');
-        music.loopFull();
-       */ 
         
         var background = game.add.sprite(0, 0, 'forest');
         background.height=game.height;
@@ -34,14 +30,13 @@ menu.prototype = {
         }
         
         
-        coals = game.add.physicsGroup();
-
         
         //Creating the randomly floating coals of the menu
+        coals = game.add.physicsGroup();
         var y = 200;
         for (var i = 0; i < 9; i++)
         {
-        var coal = coals.create(game.world.randomX, y, 'alien');
+        var coal = coals.create(game.world.randomX, y, 'coal');
         coal.width = 40;
         coal.height = 40;
         coal.body.velocity.x = game.rnd.between(100, 300);
@@ -71,7 +66,7 @@ menu.prototype = {
 	},
     
     
-    
+    //Function to mute and unmute
     toggleSound: function() {		
       if (this.game.sound.mute) {
           this.game.sound.mute = false;

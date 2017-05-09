@@ -11,7 +11,7 @@ var theGame = function() {
    
 
     var player;
-    var aliens;
+    var coals;
     var blobs;
     var diamonds;
 
@@ -53,9 +53,9 @@ create: function() {
     
     //Creates a piece of coal to a random location.
     function createCoals() {
-        var alien = aliens.create((game.width-40)*Math.random(),((game.height-120)*Math.random())+60, 'alien');
-        alien.width = 40;
-        alien.height = 40;
+        var coal = coals.create((game.width-40)*Math.random(),((game.height-120)*Math.random())+60, 'coal');
+        coal.width = 40;
+        coal.height = 40;
     } 
     
     //Creates peat to a random location and with a random velocity.
@@ -74,7 +74,8 @@ create: function() {
     
     var background = game.add.sprite(0, 0, 'forest');
     background.height=game.height;
-    background.width=game.width;    
+    background.width=game.width;  
+    
     scoreText = game.add.text(350, 16, 'SCORE: 0', style);
     
     game.physics.setBoundsToWorld();
@@ -101,9 +102,9 @@ create: function() {
     
     
     //Adding groups for the different objects in the game.
-    aliens = game.add.group();
-    aliens.enableBody = true;
-    aliens.physicsBodyType = Phaser.Physics.ARCADE;
+    coals = game.add.group();
+    coals.enableBody = true;
+    coals.physicsBodyType = Phaser.Physics.ARCADE;
 
     blobs = game.add.group();
     blobs.enableBody = true;
@@ -172,10 +173,10 @@ update: function() {
     
     //Creates a new piece of coal to a random location
     function newCoal() {
-        var alien = aliens.create((game.width-40)*Math.random(), 60 + Math.random() * (game.height - 120), 'alien');
-        alien.width = 40;
-        alien.height = 40;
-        alien.checkWorldBounds = true;
+        var coal = coals.create((game.width-40)*Math.random(), 60 + Math.random() * (game.height - 120), 'coal');
+        coal.width = 40;
+        coal.height = 40;
+        coal.checkWorldBounds = true;
     }
     
     /* When colliding with a diamond, this method deletes it,
@@ -193,9 +194,9 @@ update: function() {
     }
     
     /*When colliding with a piece of coal, this method deletes it and calls
-        newAlien to create a new coal, adds to the score and ends the game if the score is enough.*/
-    function coalCollision(player, alien) {
-        aliens.remove(alien);
+        newCoal to create a new coal, adds to the score and ends the game if the score is enough.*/
+    function coalCollision(player, coal) {
+        coals.remove(coal);
         newCoal();  
         console.log(score);
         coalSound.play();
@@ -232,7 +233,7 @@ update: function() {
     }
        
     //Check collisions with other objects in the game, and call the according methods
-    game.physics.arcade.overlap(player, aliens, coalCollision, null, this);
+    game.physics.arcade.overlap(player, coals, coalCollision, null, this);
     game.physics.arcade.overlap(player, blobs, blobCollision, null, this);
     game.physics.arcade.overlap(player, diamonds, diamondCollision, null, this);
     

@@ -25,7 +25,7 @@ help.prototype = {
         
         
         
-        var pic1 = game.add.sprite(620,250, 'alien');
+        var pic1 = game.add.sprite(620,250, 'coal');
             pic1.width = 80;
             pic1.height = 80;
         var pic2 = game.add.sprite(710,245,'diamond');
@@ -34,7 +34,7 @@ help.prototype = {
         var pic3 = game.add.sprite(660,350,'peat');
             pic3.width = 100;
             pic3.height = 100;
-        var pic4 = game.add.sprite(120,430,'keys');
+        var pic4 = game.add.sprite(120,450,'keys');
             pic4.width = 160;
             pic4.height = 120;
         

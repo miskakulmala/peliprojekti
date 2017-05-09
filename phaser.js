@@ -74011,8 +74011,8 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.png". It will always add `.png` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * This method also supports passing in a texture object as the `url` argument. This allows you to load
@@ -74043,7 +74043,7 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#image
     * @param {string} key - Unique asset key of this image file.
-    * @param {string|object} [url] - URL of an image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png". Can also be a texture data object.
+    * @param {string|object} [url] - URL of an image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png". Can also be a texture data object.
     * @param {boolean} [overwrite=false] - If an unloaded file with a matching key already exists in the queue, this entry will overwrite it.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -74109,8 +74109,8 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.pvr". It will always add `.pvr` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.pvr". It will always add `.pvr` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * @method Phaser.Loader#texture
@@ -74162,13 +74162,13 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.png". It will always add `.png` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * @method Phaser.Loader#images
     * @param {array} keys - An array of unique asset keys of the image files.
-    * @param {array} [urls] - Optional array of URLs. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png". If provided the URLs array length must match the keys array length.
+    * @param {array} [urls] - Optional array of URLs. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png". If provided the URLs array length must match the keys array length.
     * @return {Phaser.Loader} This Loader instance.
      */
     images: function (keys, urls) {
@@ -74203,13 +74203,13 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.txt". It will always add `.txt` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.txt". It will always add `.txt` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * @method Phaser.Loader#text
     * @param {string} key - Unique asset key of the text file.
-    * @param {string} [url] - URL of the text file. If undefined or `null` the url will be set to `<key>.txt`, i.e. if `key` was "alien" then the URL will be "alien.txt".
+    * @param {string} [url] - URL of the text file. If undefined or `null` the url will be set to `<key>.txt`, i.e. if `key` was "coal" then the URL will be "coal.txt".
     * @param {boolean} [overwrite=false] - If an unloaded file with a matching key already exists in the queue, this entry will overwrite it.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -74231,13 +74231,13 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.json". It will always add `.json` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.json". It will always add `.json` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * @method Phaser.Loader#json
     * @param {string} key - Unique asset key of the json file.
-    * @param {string} [url] - URL of the JSON file. If undefined or `null` the url will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+    * @param {string} [url] - URL of the JSON file. If undefined or `null` the url will be set to `<key>.json`, i.e. if `key` was "coal" then the URL will be "coal.json".
     * @param {boolean} [overwrite=false] - If an unloaded file with a matching key already exists in the queue, this entry will overwrite it.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -74285,13 +74285,13 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.xml". It will always add `.xml` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.xml". It will always add `.xml` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * @method Phaser.Loader#xml
     * @param {string} key - Unique asset key of the xml file.
-    * @param {string} [url] - URL of the XML file. If undefined or `null` the url will be set to `<key>.xml`, i.e. if `key` was "alien" then the URL will be "alien.xml".
+    * @param {string} [url] - URL of the XML file. If undefined or `null` the url will be set to `<key>.xml`, i.e. if `key` was "coal" then the URL will be "coal.xml".
     * @param {boolean} [overwrite=false] - If an unloaded file with a matching key already exists in the queue, this entry will overwrite it.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -74310,8 +74310,8 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.js". It will always add `.js` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.js". It will always add `.js` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * Upon successful load the JavaScript is automatically turned into a script tag and executed, so be careful what you load!
@@ -74321,7 +74321,7 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#script
     * @param {string} key - Unique asset key of the script file.
-    * @param {string} [url] - URL of the JavaScript file. If undefined or `null` the url will be set to `<key>.js`, i.e. if `key` was "alien" then the URL will be "alien.js".
+    * @param {string} [url] - URL of the JavaScript file. If undefined or `null` the url will be set to `<key>.js`, i.e. if `key` was "coal" then the URL will be "coal.js".
     * @param {function} [callback=(none)] - Optional callback that will be called after the script tag has loaded, so you can perform additional processing.
     * @param {object} [callbackContext=(loader)] - The context under which the callback will be applied. If not specified it will use the Phaser Loader as the context.
     * @return {Phaser.Loader} This Loader instance.
@@ -74347,8 +74347,8 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.bin". It will always add `.bin` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.bin". It will always add `.bin` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * It will be loaded via xhr with a responseType of "arraybuffer". You can specify an optional callback to process the file after load.
@@ -74358,7 +74358,7 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#binary
     * @param {string} key - Unique asset key of the binary file.
-    * @param {string} [url] - URL of the binary file. If undefined or `null` the url will be set to `<key>.bin`, i.e. if `key` was "alien" then the URL will be "alien.bin".
+    * @param {string} [url] - URL of the binary file. If undefined or `null` the url will be set to `<key>.bin`, i.e. if `key` was "coal" then the URL will be "coal.bin".
     * @param {function} [callback=(none)] - Optional callback that will be passed the file after loading, so you can perform additional processing on it.
     * @param {object} [callbackContext] - The context under which the callback will be applied. If not specified it will use the callback itself as the context.
     * @return {Phaser.Loader} This Loader instance.
@@ -74392,13 +74392,13 @@ Phaser.Loader.prototype = {
     *
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension.
+    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "coal"
+    * and no URL is given then the Loader will set the URL to be "coal.png". It will always add `.png` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * @method Phaser.Loader#spritesheet
     * @param {string} key - Unique asset key of the sheet file.
-    * @param {string} url - URL of the sprite sheet file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
+    * @param {string} url - URL of the sprite sheet file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png".
     * @param {number} frameWidth - Width in pixels of a single frame in the sprite sheet.
     * @param {number} frameHeight - Height in pixels of a single frame in the sprite sheet.
     * @param {number} [frameMax=-1] - How many frames in this sprite sheet. If not specified it will divide the whole image into frames.
@@ -74692,14 +74692,14 @@ Phaser.Loader.prototype = {
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
     * If the URL isn't specified and no data is given then the Loader will take the key and create a filename from that.
-    * For example if the key is "alien" and no URL or data is given then the Loader will set the URL to be "alien.json".
+    * For example if the key is "coal" and no URL or data is given then the Loader will set the URL to be "coal.json".
     * It will always use `.json` as the extension.
     *
     * If you do not desire this action then provide a URL or data object.
     *
     * @method Phaser.Loader#physics
     * @param {string} key - Unique asset key of the physics json data.
-    * @param {string} [url] - URL of the physics data file. If undefined or `null` and no data is given the url will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+    * @param {string} [url] - URL of the physics data file. If undefined or `null` and no data is given the url will be set to `<key>.json`, i.e. if `key` was "coal" then the URL will be "coal.json".
     * @param {object|string} [data] - An optional JSON data object. If given then the url is ignored and this JSON object is used for physics data instead.
     * @param {string} [format=Phaser.Physics.LIME_CORONA_JSON] - The format of the physics data.
     * @return {Phaser.Loader} This Loader instance.
@@ -74860,8 +74860,8 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#atlasJSONArray
     * @param {string} key - Unique asset key of the texture atlas file.
-    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
-    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png".
+    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "coal" then the URL will be "coal.json".
     * @param {object} [atlasData] - A JSON data object. You don't need this if the data is being loaded from a URL.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -74906,8 +74906,8 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#atlasJSONHash
     * @param {string} key - Unique asset key of the texture atlas file.
-    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
-    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png".
+    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "coal" then the URL will be "coal.json".
     * @param {object} [atlasData] - A JSON data object. You don't need this if the data is being loaded from a URL.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -74952,8 +74952,8 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#atlasXML
     * @param {string} key - Unique asset key of the texture atlas file.
-    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
-    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.xml".
+    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png".
+    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "coal" then the URL will be "coal.xml".
     * @param {object} [atlasData] - An XML data object. You don't need this if the data is being loaded from a URL.
     * @return {Phaser.Loader} This Loader instance.
     */
@@ -75004,8 +75004,8 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#atlas
     * @param {string} key - Unique asset key of the texture atlas file.
-    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
-    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+    * @param {string} [textureURL] - URL of the texture atlas image file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "coal" then the URL will be "coal.png".
+    * @param {string} [atlasURL] - URL of the texture atlas data file. If undefined or `null` and no atlasData is given, the url will be set to `<key>.json`, i.e. if `key` was "coal" then the URL will be "coal.json".
     * @param {object} [atlasData] - A JSON or XML data object. You don't need this if the data is being loaded from a URL.
     * @param {number} [format] - The format of the data. Can be Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY (the default), Phaser.Loader.TEXTURE_ATLAS_JSON_HASH or Phaser.Loader.TEXTURE_ATLAS_XML_STARLING.
     * @return {Phaser.Loader} This Loader instance.

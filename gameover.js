@@ -9,10 +9,7 @@ gameOver.prototype = {
         background.height=game.height;
         background.width=game.width;
         
-        
-        
         menuMusic.mute = false;
-        
                     
         //Adding the mute-button
         this.soundToggle = this.game.add.button(this.game.world.width - 70, 15, 'soundsprite', this.toggleSound, this);
