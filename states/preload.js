@@ -9,7 +9,6 @@ preload.prototype = {
         //Images
         this.game.load.image('forest','assets/background.jpg');
 		this.game.load.image('coal', 'assets/smallcoal.gif');
-        //this.game.load.image('coal','assets/smilingcoal.gif')
         this.game.load.image('peat','assets/peat.png');
         this.game.load.image('diamond', 'assets/diamond.png');
         this.game.load.image('keys','assets/keys.png');

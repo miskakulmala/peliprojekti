@@ -198,7 +198,6 @@ update: function() {
     function coalCollision(player, coal) {
         coals.remove(coal);
         newCoal();  
-        console.log(score);
         coalSound.play();
         score += 1;
         scoreText.text = 'SCORE: ' + score;
@@ -211,7 +210,6 @@ update: function() {
 
     /*When colliding with peat, this method reduces the health of the player, displays the correct frame of the healthbar's spritesheet and         ends the game, if the player's health has reached zero.*/
     function blobCollision() {
-        console.log(health);
         health -= 2;
         if (health != 0) {
             slap.play();
