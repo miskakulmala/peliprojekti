@@ -52,7 +52,7 @@ create: function() {
     
     //Creates a piece of coal to a random location.
     function createCoals() {
-        var alien = aliens.create(20+(game.width-40)*Math.random(),((game.height-110)*Math.random())+60, 'alien');
+        var alien = aliens.create((game.width-40)*Math.random(),((game.height-120)*Math.random())+60, 'alien');
         alien.width = 40;
         alien.height = 40;
     } 
@@ -172,7 +172,7 @@ update: function() {
     
     //Creates a new piece of coal to a random location
     function newCoal() {
-        var alien = aliens.create((game.width-40)*Math.random(), Math.random() * (game.height - 40), 'alien');
+        var alien = aliens.create((game.width-40)*Math.random(), 60 + Math.random() * (game.height - 120), 'alien');
         alien.width = 40;
         alien.height = 40;
         alien.checkWorldBounds = true;
