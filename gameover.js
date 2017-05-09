@@ -33,7 +33,8 @@ gameOver.prototype = {
         };
         
         if (win) {
-            
+            var winsound = game.add.audio('winmusic');
+            winsound.play()
             var endText = game.add.text(100, 220, "You won the game!\nNow Finland will stay warm,\njust like it should.", style);
         }
         else {

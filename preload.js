@@ -36,6 +36,7 @@ preload.prototype = {
         this.game.load.audio('slap', 'assets/slap_cutted.mp3');
         this.game.load.audio('diamondSound', 'assets/diamond.mp3');
         this.game.load.audio('menumusic','assets/valikkomusa.ogg');
+        this.game.load.audio('winmusic', 'assets/applause.mp3');
         
         //Font
         this.game.load.script('font.rajdhani','//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
