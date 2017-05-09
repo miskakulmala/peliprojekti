@@ -9,6 +9,8 @@ gameOver.prototype = {
         background.height=game.height;
         background.width=game.width;
         
+        
+        
         menuMusic.mute = false;
         
                     
@@ -31,7 +33,8 @@ gameOver.prototype = {
         };
         
         if (win) {
-            var endText = game.add.text(120, 220, "You won the game!", style);
+            
+            var endText = game.add.text(100, 220, "You won the game!\nNow Finland will stay warm,\njust like it should.", style);
         }
         else {
             var endText = game.add.text(120, 220, "You scored: " + score, style);

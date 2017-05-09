@@ -46,7 +46,11 @@ help.prototype = {
         
 	},
 	goToMenu: function(){
-		this.game.state.start("GameTitle");
+        if (played) {
+		this.game.state.start("GameOver");
+        } else {
+            this.game.state.start("GameTitle");
+        }
 	},
     
 }

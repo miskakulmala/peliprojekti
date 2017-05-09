@@ -33,6 +33,7 @@ create: function() {
         align: 'center'
     };
 
+    played = true;
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
     score = 0;
@@ -96,7 +97,6 @@ create: function() {
     player.height = 60;
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
-    
     
     
     
@@ -166,8 +166,8 @@ update: function() {
 
     //Making the peat gradually faster
     blobs.forEach(function(item) {
-        item.body.velocity.x = 1.0004*item.body.velocity.x;
-        item.body.velocity.y = 1.0004*item.body.velocity.y;
+        item.body.velocity.x = 1.0006*item.body.velocity.x;
+        item.body.velocity.y = 1.0006*item.body.velocity.y;
     });
     
     //Creates a new piece of coal to a random location

@@ -1,3 +1,5 @@
+var played = false;
+
 var preload = function(game){
     var menuMusic;
 }
